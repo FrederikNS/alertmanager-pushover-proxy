@@ -28,9 +28,9 @@ def webhook():
     requests.post(POST_URL, json={
         "token": TOKEN,
         "user": USER_KEY,
-        "message": str(body["groupLabels"]),
+        "message": body["commonAnnotations"]["description"],
         "priority": 0,
-        "title": body["groupKey"],
+        "title": body["commonAnnotations"]["summary"],
         "ttl": 3600
     })
 
